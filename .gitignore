@@ -1,0 +1,17 @@
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+
+# Local environment and signing keys
+.env
+.env.*
+!.env.example
+*.key
+*.pfx
+*.p12
+*.keystore
+*.jks

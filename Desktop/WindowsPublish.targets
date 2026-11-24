@@ -1,0 +1,30 @@
+<Project>
+  <Target Name="RequireWindowsX64Publish" BeforeTargets="PrepareForPublish" Condition="'$(RuntimeIdentifier)' != 'win-x64'">
+    <Error Text="CSharpMrp Desktop publishes only for win-x64." />
+  </Target>
+
+  <Target Name="ArrangeWindowsPublish" AfterTargets="ComputeFilesToPublish" DependsOnTargets="_GetAppHostPaths"
+          Condition="'$(UseAppHost)' == 'true' and '$(_NativeExecutableExtension)' == '.exe' and '$(PublishSingleFile)' != 'true'">
+    <PropertyGroup>
+      <DesktopPublishHost>$(IntermediateOutputPath)desktop-launcher.exe</DesktopPublishHost>
+    </PropertyGroup>
+    <!-- AppHost finds hostfxr beside the managed entry, so native and managed libraries share one directory. -->
+    <CreateAppHost AppHostSourcePath="$(AppHostSourcePath)"
+                   AppHostDestinationPath="$(DesktopPublishHost)"
+                   AppBinaryName="dlls/$(TargetFileName)"
+                   IntermediateAssembly="@(IntermediateAssembly->'%(FullPath)')"
+                   WindowsGraphicalUserInterface="true" />
+    <ItemGroup>
+      <_DesktopOriginalHost Include="@(ResolvedFileToPublish)"
+                            Condition="'%(ResolvedFileToPublish.RelativePath)' == '$(AssemblyName).exe'" />
+      <ResolvedFileToPublish Remove="@(_DesktopOriginalHost)" />
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)"
+                             Condition="'%(ResolvedFileToPublish.Extension)' == '.pdb'" />
+      <ResolvedFileToPublish Update="@(ResolvedFileToPublish)"
+                             Condition="!$([System.String]::Copy('%(ResolvedFileToPublish.RelativePath)').Replace('\', '/').StartsWith('mythroad/'))">
+        <RelativePath>dlls/%(ResolvedFileToPublish.RelativePath)</RelativePath>
+      </ResolvedFileToPublish>
+      <ResolvedFileToPublish Include="$(DesktopPublishHost)" RelativePath="$(AssemblyName).exe" CopyToPublishDirectory="Always" />
+    </ItemGroup>
+  </Target>
+</Project>

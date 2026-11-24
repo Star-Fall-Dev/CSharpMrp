@@ -1,0 +1,7 @@
+{
+  "name": "com.mrp.csharp",
+  "version": "1.0.2",
+  "displayName": "CSharpMrp Core",
+  "description": "Engine-independent C# MRP runtime.",
+  "unity": "2022.3"
+}

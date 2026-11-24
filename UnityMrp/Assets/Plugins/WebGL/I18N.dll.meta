@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: a16d56c2436e41a08b895f85f0ac2a18
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints: []
+  isPreloaded: 0
+  isOverridable: 0
+  isExplicitlyReferenced: 0
+  validateReferences: 1
+  platformData:
+  - first:
+      Any:
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      WebGL: WebGL
+    second:
+      enabled: 1
+      settings: {}

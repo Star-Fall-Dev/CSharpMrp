@@ -1,0 +1,14 @@
+Resource Han Rounded SC Regular, static TTF v0.990
+Official source: https://github.com/CyanoHao/Resource-Han-Rounded/releases/tag/v0.990
+Archive: RHR-TTF-0.990.7z
+File SHA-256: f9f73ef18b8c84ff8261b37790c95216153e950b1869460c16d73b0b20de3a8c
+Embedded copyright: Copyright © 2018—2019 Cyano Hao. Portions © 2014, 2015, 2018 Adobe (http://www.adobe.com/).
+License: SIL Open Font License 1.1; see ResourceHanRounded-OFL.txt.
+
+Shipped file is a Chinese/English subset of the original described above.
+Modified internal family: MRP Han Rounded SC (SIL OFL 1.1).
+Subset SHA-256: 4d0cf85c04cd73bf2e6d90792ff60e555247675988479370e4bc1cb85ec4df4d.
+Coverage is the common simplified Chinese/English/numbers/symbols set from
+https://github.com/wy-luke/All-Chinese-Character-Set/blob/b4b4e52e634327441c531a1d3e848b322ec657ba/7000%2Bsymbols.txt
+plus printable ASCII and required launcher UI characters. Rare characters outside this finite set are excluded.
+License text source: https://github.com/CyanoHao/Resource-Han-Rounded/blob/master/OFL-License.txt

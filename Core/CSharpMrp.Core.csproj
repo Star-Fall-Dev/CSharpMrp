@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <RootNamespace>CSharpMrp</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Runtime/**/*.cs"
+             Exclude="Runtime/ThirdParty/**/*.cs" />
+    <ProjectReference Include="Synth/CSharpSynth.csproj" />
+    <EmbeddedResource Include="Runtime/Resources/CSharpMrpGMBank.bytes"
+                      LogicalName="CSharpMrp.Audio.GMBank.bank"
+                      Condition="'$(EmbedGmBank)' != 'false'" />
+    <Reference Include="NLayer">
+      <HintPath>Runtime/Plugins/NLayer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

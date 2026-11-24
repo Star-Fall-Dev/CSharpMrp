@@ -1,0 +1,11 @@
+* text=auto
+*.bat text eol=crlf
+*.cs text eol=lf
+*.jslib text eol=lf
+*.meta text eol=lf
+*.unity text eol=lf
+*.dll binary
+*.mrp binary
+*.png binary
+*.tgz binary
+*.ttf binary
